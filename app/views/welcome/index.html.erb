@@ -4,7 +4,7 @@ The role of the Campus Sustainability Council (CSC) is to provide funding to reg
 </p>
 <div id="info-panel">
 	<div id="updates" class='infobox'>
-		<%= content_tag_for(:tr, @status_updates) do |update| %>
+		<%= content_tag_for(:tr, StatusUpdate.limit(5)) do |update| %>
 		  <td><%= update.date %></td>
 		  <td><%= update.content %></td>
 		<% end %>
