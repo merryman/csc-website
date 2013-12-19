@@ -1,4 +1,7 @@
 Csc::Application.routes.draw do
+  get "grantees/proposal"
+  get "grantees/criteria"
+  get "grantees/training"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
