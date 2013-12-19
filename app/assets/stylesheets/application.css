@@ -11,3 +11,29 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	padding-left: 100px;
+	padding-right: 100px;
+	margin-top: 0px;
+}
+
+div#content {
+	width: 770px; /* will be fixed with js lateron*/
+}
+
+div.infopanel {
+	overflow: hidden;
+}
+
+div.infobox {
+	float: left;
+	width: 200px;
+	height: 300px;
+	margin: 10px;
+	padding: 10px;
+	box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+/*	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+*/}

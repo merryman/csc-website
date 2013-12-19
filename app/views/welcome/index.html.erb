@@ -3,19 +3,19 @@
 The role of the Campus Sustainability Council (CSC) is to provide funding to registered UCSC student organizations for programs and events that create, implement, and monitor environmentally sound practices on campus as established through the protocol outlined in the Blueprint for a Sustainable Campus. These organizations additionally facilitate greater collaboration between students, the administration, staff, faculty, and the community.
 </p>
 <div id="info-panel">
-	<div id="updates">
+	<div id="updates" class='infobox'>
 		<%= content_tag_for(:tr, @status_updates) do |update| %>
 		  <td><%= update.date %></td>
 		  <td><%= update.content %></td>
 		<% end %>
 	</div>
-	<div id="meetings">
+	<div id="meetings" class='infobox'>
     Campus Sustainability Council Meetings have been set for Monday Nights from 	<%= "7:30-9:30pm" %>
     Located in 
     <%= "College Eight, Room 301" %>
     Please contact us prior to attendance via <%= "csc@ucsc.edu" %>
 	</div>
-	<div id="contact">
+	<div id="contact" class='infobox'>
 	Interested in CSC?!
 	Feel free to fill out the contact form and/or contact us directly at 
 	<%= "csc@ucsc.edu" %>. If you are interested in learning more about CSC
