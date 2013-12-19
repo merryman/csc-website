@@ -1,4 +1,9 @@
 Csc::Application.routes.draw do
+  get "transparency/agendas"
+  get "transparency/minutes"
+  get "transparency/budgets"
+  get "transparency/constitution"
+  get "transparency/history"
   get "grantees/proposal"
   get "grantees/criteria"
   get "grantees/training"
