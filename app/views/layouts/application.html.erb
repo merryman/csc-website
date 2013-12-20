@@ -3,6 +3,7 @@
 <head>
   <title>Csc</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,9 +11,9 @@
 
 	<div id="menu-container">
 		<%= image_tag "redwood.jpg"%>
-		<div class="navbar navbar-inverse transparent" style="position: absolute; bottom: 69px; width:770px;">
+		<div class="navbar navbar-inverse transparent" style="position: absolute; top: 246px; width:770px;">
               <div class="navbar-inner">
-                <div class="container" style="font-family: sans-serif; font-size: 10pt;">
+                <div class="container" style="font-family: sans-serif; font-size: 10pt; background-color: #FFF;">
 					<%= render_navigation(:level => 1) %>
                 </div>
               </div>
@@ -20,7 +21,7 @@
 		</div>
 	</div>
 
-<div id="content">
+<div id="content" style='font-family: sans-serif'>
 <%= yield %>	
 </div>
 

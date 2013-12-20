@@ -20,6 +20,23 @@ body {
 
 div#content {
 	width: 770px; /* will be fixed with js lateron*/
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+div#left-box {
+	width: 500px;
+	float: left;
+}
+
+div#right-box {
+	float: left;
+}
+
+#description > p {
+	color: #555;
+	font-style: italic;
+	margin: 5px;
 }
 
 div.infopanel {
