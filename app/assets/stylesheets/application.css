@@ -26,6 +26,12 @@ div.infopanel {
 	overflow: hidden;
 }
 
+div.transparent {
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.75;
+}
+
 div.infobox {
 	float: left;
 	width: 200px;
