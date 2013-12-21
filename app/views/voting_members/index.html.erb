@@ -1,18 +1,25 @@
 <div id="members">
-	<%= @members.each do |member|%>
+	
+	<% VotingMember.all.each do |member| %>
 	<div class="well">
-		<div class="names">
-			<div class='first-name'>
-				member.first_name
-			</div>
-			<div class='last-name'>
-				member.last_name
-			</div>
+		<div class="profile-pic">
+			<%= image_tag member.profile_picture.url(:medium) %>
 		</div>
-		<div id="description">
-			<%= member.description%>
+		<div id="name-box">
+			<%= member.first_name + ' ' + member.last_name%>
+		</div>
+		<div class="member-desctiption">
+			<%= member.description %>
 		</div>
 	</div>
-	<%end%>
+    <p>
+    <%= link_to 'Destroy', member,
+         method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+	<% end %>
+
+	<div id="create_new_member">
+		<%= render 'form' %>
+	</div>
 	
 </div>

@@ -56,6 +56,10 @@ div#donut {
 	overflow: hidden;
 }
 
+#timeline {
+	width: 220px;
+}
+
 p#timeline-title {
 	margin-top: 0px;
 	font-size: larger;

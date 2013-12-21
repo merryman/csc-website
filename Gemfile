@@ -16,6 +16,7 @@ end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem "simple-navigation"
+gem 'paperclip'
 
 gem 'pg'
 gem 'rails_12factor', group: :production

@@ -1,0 +1,19 @@
+<%= form_for :member, url: url_for(:controller => 'voting_members', :action => 'create') do |f| %>
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :profile_picture %><br />
+    <%= f.file_field :profile_picture %>
+  </p>
+  <p><%= f.submit "Create" %></p>
+<% end %>

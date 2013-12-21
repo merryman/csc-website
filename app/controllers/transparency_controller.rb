@@ -1,4 +1,7 @@
 class TransparencyController < ApplicationController
+  def index
+  end
+  
   def agendas
   end
 

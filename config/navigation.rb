@@ -55,21 +55,21 @@ SimpleNavigation::Configuration.run do |navigation|
     # Add an item which has a sub navigation (same params, but with block)
     primary.item :grantees, 'Grantees', 'grantees/criteria' do |sub_nav|
       # Add an item to the sub navigation (same params again)
-      sub_nav.item :training, 'Grant Training', 'grantees/training'
-      sub_nav.item :proposal, 'Submitting Proposals', 'grantees/proposal'
-      sub_nav.item :criteria, 'Funding Criteria', 'grantees/criteria'
+      sub_nav.item :training, 'Grant Training', url_for(:action => 'training', :controller => 'grantees')
+      sub_nav.item :proposal, 'Submitting Proposals', url_for(:action => 'proposal', :controller => 'grantees')
+      sub_nav.item :criteria, 'Funding Criteria', url_for(:action => 'criteria', :controller => 'grantees')
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    primary.item :members, 'Voting Members', 'members'
-    primary.item :transparency, 'Transparency', 'transparency/all' do |sub_nav|
-      sub_nav.item :agendas, 'Agendas', 'transparency/agendas' 
-      sub_nav.item :minutes, 'Minutes', 'transparency/minutes'
-      sub_nav.item :budgets, 'Budgets', 'transparency/budgets'
-      sub_nav.item :constitution, 'Constitution', 'transparency/constitution'
-      sub_nav.item :history, 'Historical Allocations', 'transparency/history'
+    primary.item :members, 'Voting Members', url_for(:action => 'index', :controller => 'voting_members')
+    primary.item :transparency, 'Transparency', url_for(:action => 'constitution', :controller => 'transparency') do |sub_nav|
+      sub_nav.item :agendas, 'Agendas', url_for(:action => 'agendas', :controller => 'transparency')
+      sub_nav.item :minutes, 'Minutes', url_for(:action => 'minutes', :controller => 'transparency')
+      sub_nav.item :budgets, 'Budgets', url_for(:action => 'budgets', :controller => 'transparency')
+      sub_nav.item :constitution, 'Constitution', url_for(:action => 'constitution', :controller => 'transparency')
+      sub_nav.item :history, 'Historical Allocations', url_for(:action => 'history', :controller => 'transparency')
     end
     
     primary.item :resources, 'Resources', 'resources/all' do |sub_nav|
