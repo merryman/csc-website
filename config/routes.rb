@@ -1,4 +1,6 @@
 Csc::Application.routes.draw do
+  resources :voting_members
+
   get "transparency/agendas"
   get "transparency/minutes"
   get "transparency/budgets"

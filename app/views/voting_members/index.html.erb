@@ -1,0 +1,18 @@
+<div id="members">
+	<%= @members.each do |member|%>
+	<div class="well">
+		<div class="names">
+			<div class='first-name'>
+				member.first_name
+			</div>
+			<div class='last-name'>
+				member.last_name
+			</div>
+		</div>
+		<div id="description">
+			<%= member.description%>
+		</div>
+	</div>
+	<%end%>
+	
+</div>
