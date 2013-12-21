@@ -25,12 +25,12 @@ div#content {
 }
 
 div#left-box {
-	width: 483px;
+	width: 440px;
 	float: left;
 }
 
 div#right-box {
-	float: left;
+	float: left;;
 }
 
 div#donut {
@@ -57,7 +57,7 @@ div#donut {
 }
 
 #timeline {
-	width: 220px;
+	width: 240px;
 }
 
 p#timeline-title {
@@ -68,6 +68,11 @@ p#timeline-title {
 
 div.infopanel {
 	overflow: hidden;
+}
+
+nav.navbar {
+	border-radius:0px;
+	width:	770px;
 }
 
 div.transparent {

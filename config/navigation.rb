@@ -5,7 +5,7 @@ SimpleNavigation::Configuration.run do |navigation|
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
-  navigation.renderer = BootstrapTopbarList
+  navigation.renderer = SimpleNavigationRenderers::Bootstrap3
 
   # Specify the class that will be applied to active navigation items. Defaults to 'selected'
   #  navigation.selected_class = 'your_selected_class'
@@ -53,7 +53,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :about_us, 'About Us', '/'
 
     # Add an item which has a sub navigation (same params, but with block)
-    primary.item :grantees, 'Grantees', 'grantees/criteria' do |sub_nav|
+    primary.item :grantees, 'Grantees', url_for(:action => 'criteria', :controller => 'grantees') do |sub_nav|
       # Add an item to the sub navigation (same params again)
       sub_nav.item :training, 'Grant Training', url_for(:action => 'training', :controller => 'grantees')
       sub_nav.item :proposal, 'Submitting Proposals', url_for(:action => 'proposal', :controller => 'grantees')

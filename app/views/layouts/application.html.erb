@@ -11,14 +11,11 @@
 
 	<div id="menu-container">
 		<%= image_tag "redwood.jpg"%>
-		<div class="navbar navbar-inverse transparent" style="position: absolute; top: 246px; width:770px;">
-              <div class="navbar-inner">
-                <div class="container" style="font-family: sans-serif; font-size: 10pt; background-color: #FFF;">
-					<%= render_navigation %>
-                </div>
-              </div>
+		<nav class="navbar navbar-inverse transparent">
+            <div class="container">
+				<%= render_navigation level: 1..2, expand_all: true %>
             </div>
-		</div>
+		</nav>
 	</div>
 
 <div id="content" style='font-family: sans-serif'>

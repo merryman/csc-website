@@ -9,7 +9,7 @@ class BootstrapTopbarList < SimpleNavigation::Renderer::Base
     if options[:is_subnavigation]
       ul_class = "dropdown-menu"
     else
-      ul_class = "nav"
+      ul_class = "nav navbar-nav"
     end
 
     list_content = item_container.items.inject([]) do |list, item|

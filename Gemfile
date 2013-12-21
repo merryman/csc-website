@@ -19,6 +19,7 @@ gem 'jquery_mobile_rails'
 # Use jquery as the JavaScript library
 gem "simple-navigation"
 gem 'paperclip'
+gem 'simple_navigation_renderers'
 
 gem 'pg'
 gem 'rails_12factor', group: :production
