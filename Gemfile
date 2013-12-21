@@ -13,8 +13,10 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery_mobile_rails'
+
+# Use jquery as the JavaScript library
 gem "simple-navigation"
 gem 'paperclip'
 
