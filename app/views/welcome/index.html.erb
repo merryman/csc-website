@@ -26,9 +26,16 @@
 </div>
 <div id="right-box">
 	<div id="timeline" class='infobox'>
-		<%= content_tag "div", id: "timeframes", data: {url: TimeFrame.all.map { |each| {:value => each.number_of_days, :data => each}}} do %>
+		<%= content_tag "div", id: "timeframes", data: {url: TimeFrame.allForTimeline } do %>
 		<% end %>
-		<b>CSC Timeline</b><p>
+		<p id='timeline-title'>CSC Timeline</p>
+		<div id="date-frame">
+		</div>
+		<div id="donut"></div>
+		<div id="description">
+			<p id="name">Off Season</p>
+			<p id="content">The CSC is currently training new members and preparing for the winter application season!</p>
+		</div>
 	</div>	
 </div>
 
