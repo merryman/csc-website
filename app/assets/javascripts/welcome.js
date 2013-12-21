@@ -50,20 +50,22 @@ function renderTimeline(){
 			function(node, i) {
 				return node.data.past_frame;
 			}
-		).data()
+		).data();
+
+	var todays_frame = d3.selectAll("path").filter(
+			function(node, i) {
+				return node.data.todays_frame;
+			}).data()[0];
 
 	var arcOver = d3.svg.arc()
 	    .outerRadius(radius)
 		.innerRadius(radius - 50);
 		
 	past_frames.map(mouseover);
-	
-	highlight(
-		d3.selectAll("path").filter(
+	highlight(d3.selectAll("path").filter(
 			function(node, i) {
 				return node.data.todays_frame;
-			}
-		));
+			}));
 		
 	function highlight(d) {
 		
@@ -107,6 +109,7 @@ function renderTimeline(){
 				.duration(100)
 				.attr("d", arc);
 		}
+		mouseover(todays_frame)
 	};
 
 };
