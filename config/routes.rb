@@ -1,4 +1,7 @@
 Csc::Application.routes.draw do
+  get "resources/blueprint"
+  get "resources/links"
+  get 'resources/index'
   get "voting_members/index"
   resources :voting_members
 

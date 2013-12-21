@@ -72,9 +72,9 @@ SimpleNavigation::Configuration.run do |navigation|
       sub_nav.item :history, 'Historical Allocations', url_for(:action => 'history', :controller => 'transparency')
     end
     
-    primary.item :resources, 'Resources', 'resources/all' do |sub_nav|
-      sub_nav.item :blueprint, 'Blueprint for a Sustainable Campus', 'resources/blueprint'
-      sub_nav.item :links, 'Links', 'resources/links'
+    primary.item :resources, 'Resources', url_for(:action => 'index', :controller => 'resources') do |sub_nav|
+      sub_nav.item :blueprint, 'Blueprint for a Sustainable Campus', url_for(:action => 'blueprint', :controller => 'resources')
+      sub_nav.item :links, 'Links', url_for(:action => 'links', :controller => 'resources')
     end
     
     primary.item :join, 'Why Join?', 'join'
