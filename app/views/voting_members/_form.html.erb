@@ -1,19 +1,26 @@
 <%= form_for :member, url: url_for(:controller => 'voting_members', :action => 'create') do |f| %>
-  <p>
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :profile_picture %><br />
-    <%= f.file_field :profile_picture %>
-  </p>
-  <p><%= f.submit "Create" %></p>
+<div class="members">
+	<div class="well">
+		<div class="profile-pic" style='padding-top: 50px;
+    padding-bottom: 50px;'>
+		    <p>
+		      <%= f.label :profile_picture %><br />
+		      <%= f.file_field :profile_picture %>
+		    </p>
+		</div>
+		<div id="textual">
+			<div id="name-box">
+			      <%= f.label :first_name %>
+			      <%= f.text_field :first_name %>
+			      <%= f.label :last_name %>
+			      <%= f.text_field :last_name %>
+			</div>
+			<div class="member-desctiption">
+			      <%= f.label :description %><br />
+			      <%= f.text_area :description %>
+			</div>
+			  <p><%= f.submit "Create" %></p>
+		</div>
+	</div>
+</div>
 <% end %>

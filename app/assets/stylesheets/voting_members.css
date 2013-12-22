@@ -2,3 +2,29 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+#name-box {
+    font-weight: 700;
+    font-size: large;
+}
+
+.profile-pic {
+    float: left;
+    padding: 10px;
+    padding-right: 20px;
+}	
+
+.circular {
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.members {
+	padding-top: 20px;
+}
