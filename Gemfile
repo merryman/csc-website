@@ -21,6 +21,8 @@ gem "simple-navigation"
 gem 'paperclip'
 gem 'simple_navigation_renderers'
 
+gem 'google-api-client'
+
 gem 'pg'
 gem 'rails_12factor', group: :production
 
