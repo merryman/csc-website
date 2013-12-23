@@ -5,6 +5,7 @@ class ResourcesController < ApplicationController
   end
   
   def blueprint
+    @blueprint = CSCFiles.session.file_by_title('blueprint')
   end
 
   def links
