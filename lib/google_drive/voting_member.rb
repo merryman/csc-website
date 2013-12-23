@@ -12,9 +12,9 @@ class VotingMemberGoogle
   end
   
   def self.fetchAll
-    if not @members
+    #if not @members
       self.refresh
-    end
+      #end
     @members 
   end
   

@@ -15,9 +15,9 @@ class StatusUpdateGoogle
   end
   
   def self.fetchAll
-    if not @status_updates
+    #if not @status_updates
       self.refresh
-    end
+      #end
     @status_updates
   end
   

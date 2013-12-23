@@ -17,9 +17,9 @@ class TimeFrameGoogle
   end
     
   def self.fetchAll
-    if not @timeframes
+    #if not @timeframes
       self.refresh
-    end
+      #end
     @timeframes 
   end
 
