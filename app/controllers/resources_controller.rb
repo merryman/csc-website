@@ -1,3 +1,4 @@
+
 class ResourcesController < ApplicationController
   
   def index
