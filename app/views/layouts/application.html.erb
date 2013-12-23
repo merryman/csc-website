@@ -7,7 +7,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class style="margin-bottom: 100px;">
 
 	<div id="menu-container">
 		<%= image_tag "redwood.jpg"%>
@@ -20,6 +20,10 @@
 
 <div id="content" style='font-family: sans-serif'>
 <%= yield %>	
+</div>
+
+<div id="imp">
+	
 </div>
 
 </body>
