@@ -13,12 +13,17 @@
 		<%= image_tag "redwood.jpg"%>
 		<nav class="navbar navbar-inverse transparent">
             <div class="container">
+				<style type="text/css" media="screen">
+				ul.nav > li {
+					font-size:	10pt;
+				}
+				</style>
 				<%= render_navigation level: 1..2, expand_all: true %>
             </div>
 		</nav>
 	</div>
 
-<div id="content" style='font-family: sans-serif'>
+<div id="content" style='font-family: sans-serif' class='clearfix'>
 <%= yield %>	
 </div>
 

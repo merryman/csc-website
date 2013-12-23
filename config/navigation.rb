@@ -77,8 +77,8 @@ SimpleNavigation::Configuration.run do |navigation|
       sub_nav.item :links, 'Links', url_for(:action => 'links', :controller => 'resources')
     end
     
-    primary.item :join, 'Why Join?', 'join'
-    primary.item :contact, 'Contact', 'contact'
+    primary.item :join, 'Why Join?', url_for(:action => 'join', :controller => 'application')
+    primary.item :contact, 'Contact', url_for(:action => 'contact', :controller => 'application')
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu

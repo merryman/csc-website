@@ -12,6 +12,27 @@
  *= require_tree .
  */
 
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
 body {
 	padding-left: 100px;
 	padding-right: 100px;
@@ -20,8 +41,9 @@ body {
 
 div#content {
 	width: 770px; /* will be fixed with js lateron*/
-	padding-right: 30px;
+	padding-right: 20px;
 	padding-left: 30px;
+	paddig
 }
 
 div#left-box {
@@ -80,15 +102,3 @@ div.transparent {
 	filter: alpha(opacity=50);
 	opacity: 0.75;
 }
-
-div.infobox {
-	float: left;
-	width: 200px;
-	height: auto;
-	margin: 10px;
-	padding: 10px;
-	box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
-/*	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-*/}

@@ -2,3 +2,24 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.update-date {
+	color: black;
+	font-weight: 700;
+}
+
+div.infobox {
+	float: left;
+	width: 200px;
+	height: auto;
+	margin: 10px;
+	padding: 10px;
+	box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+/*	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+*/}
+	
+#meetings {
+	text-align: center;
+}
