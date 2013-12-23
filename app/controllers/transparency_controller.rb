@@ -1,4 +1,5 @@
 class TransparencyController < ApplicationController
+  
   def index
   end
   

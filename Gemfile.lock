@@ -1,3 +1,13 @@
+GIT
+  remote: git@github.com:merryman/signet.git
+  revision: 32553ee55ffb57c12c892570ccd3fb99ddc7997b
+  specs:
+    signet (0.5.0)
+      addressable (>= 2.2.3)
+      faraday (>= 0.9.0.rc5)
+      jwt (>= 0.1.5)
+      multi_json (>= 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -26,6 +36,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    american_date (1.1.0)
     arel (4.0.1)
     atomic (1.1.14)
     autoparse (0.3.3)
@@ -73,22 +84,26 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     extlib (0.9.16)
-    faraday (0.8.8)
+    faraday (0.9.0.rc6)
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
     gherkin (2.12.2)
       multi_json (~> 1.3)
-    google-api-client (0.6.4)
+    google-api-client (0.7.0.rc2)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
       extlib (>= 0.9.15)
-      faraday (~> 0.8.4)
+      faraday (>= 0.9.0.rc5)
       jwt (>= 0.1.5)
       launchy (>= 2.1.1)
       multi_json (>= 1.0.0)
-      signet (~> 0.4.5)
+      signet (>= 0.5.0)
       uuidtools (>= 2.1.0)
+    google_drive (0.3.6)
+      nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
+      oauth (>= 0.3.6)
+      oauth2 (>= 0.5.0)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -103,6 +118,7 @@ GEM
       guard (>= 1.1)
       spork (>= 0.8.4)
     hike (1.2.3)
+    httpauth (0.2.0)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -131,9 +147,18 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_test (0.0.2)
+    multi_xml (0.5.5)
     multipart-post (1.2.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    oauth (0.4.7)
+    oauth2 (0.9.2)
+      faraday (~> 0.8)
+      httpauth (~> 0.2)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -192,11 +217,6 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
-    signet (0.4.5)
-      addressable (>= 2.2.3)
-      faraday (~> 0.8.1)
-      jwt (>= 0.1.5)
-      multi_json (>= 1.0.0)
     simple-navigation (3.11.0)
       activesupport (>= 2.3.2)
     simple_navigation_renderers (0.0.3)
@@ -238,10 +258,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  american_date
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
-  google-api-client
+  google-api-client (~> 0.7.0.rc2)
+  google_drive
   guard-cucumber
   guard-spork
   jbuilder (~> 1.2)
@@ -254,6 +276,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
+  signet!
   simple-navigation
   simple_navigation_renderers
   turbolinks

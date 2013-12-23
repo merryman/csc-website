@@ -5,11 +5,13 @@
 	</p>
 	<div id="info-panel">
 		<div id="updates" class='infobox'>
-			<%= content_tag_for(:tr, StatusUpdate.limit(5)) do |update| %>
-			  <td><%= update.date.to_s  %></td>
+			<tr>
+			 <% StatusUpdateGoogle.fetchAll.each do |update| %>
+			  <td><%= update.date.to_date.to_s  %></td><p>
 			  <td><%= update.content %></td>
 			  <p>
 			<% end %>
+		    </tr>
 		</div>
 		<div id="meetings" class='infobox'>
 	    Campus Sustainability Council Meetings have been set for Monday Nights from 	
@@ -26,7 +28,7 @@
 </div>
 <div id="right-box">
 	<div id="timeline" class='infobox'>
-		<%= content_tag "div", id: "timeframes", data: {url: TimeFrame.allForTimeline } do %>
+		<%= content_tag "div", id: "timeframes", data: {url: TimeFrameGoogle.allForTimeline } do %>
 		<% end %>
 		<p id='timeline-title'>CSC Timeline</p>
 		<div id="date-frame">

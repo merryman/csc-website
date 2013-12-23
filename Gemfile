@@ -21,7 +21,10 @@ gem "simple-navigation"
 gem 'paperclip'
 gem 'simple_navigation_renderers'
 
-gem 'google-api-client'
+gem "google-api-client", "~> 0.7.0.rc2"
+gem 'signet', :git => 'git@github.com:merryman/signet.git'
+gem 'google_drive'
+gem 'american_date'
 
 gem 'pg'
 gem 'rails_12factor', group: :production
