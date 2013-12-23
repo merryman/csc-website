@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:merryman/signet.git
+  remote: git://github.com/merryman/signet.git
   revision: 32553ee55ffb57c12c892570ccd3fb99ddc7997b
   specs:
     signet (0.5.0)
