@@ -78,7 +78,7 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     
     primary.item :join, 'Why Join?', url_for(:action => 'join', :controller => 'application')
-    primary.item :contact, 'Contact', url_for(:action => 'contact', :controller => 'application')
+    primary.item :contact, 'Contact', 'mailto:csc@ucsc.edu'
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
