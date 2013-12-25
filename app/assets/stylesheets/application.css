@@ -39,6 +39,16 @@ body {
 	margin-top: 0px;
 }
 
+#title {
+	position: absolute;
+	top: 10px;
+	left: 200px;
+	color: #fff;
+	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+	font-size: 60px;
+	font-family: 'Chrono Bold';
+}
+
 div#content {
 	width: 770px; /* will be fixed with js lateron*/
 	padding-right: 20px;
@@ -101,4 +111,25 @@ div.transparent {
 	zoom: 1;
 	filter: alpha(opacity=50);
 	opacity: 0.75;
+}
+
+/* Fonts */
+@font-face {
+	font-family: 'Chrono Bold';
+	src: url('/assets/ChronoWebBold.woff') format("woff");
+}
+
+@font-face {
+  font-family: "Chrono Regular";
+  src: url("/assets/ChronoWebRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chrono Medium";
+  src: url("/assets/ChronoWebMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Chrono Light";
+  src: url("/assets/ChronoWebLight.woff") format("woff");
 }

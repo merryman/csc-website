@@ -1,2 +1,27 @@
 <h1>Budgets</h1>
 <p>A list of all the Budgets (Google Drive Integration)</p>
+
+<h3> CSC Budgets and Expenses </h3>	
+<% @budget_files[:csc].each do |budget_file| %>
+	<p>
+	<%= link_to	'', budget_file.human_url, 
+		:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %>	
+	<span><%= budget_file.title %> </span>  
+	<p/>
+<% end %>
+<h3> SEC Budgets and Expenses </h3>
+<% @budget_files[:sec].each do |budget_file| %>
+	<p>
+	<%= link_to	'', budget_file.human_url, 
+	:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %> 
+	<span><%= budget_file.title %> </span>
+	<p/>
+<% end %>
+<h3> ESLP Budgets and Expenses </h3>
+<% @budget_files[:eslp].each do |budget_file| %>
+	<p>
+	<%= link_to	'', budget_file.human_url,
+	:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %> 
+	<span><%= budget_file.title %> </span>
+	<p/>
+<% end %>
