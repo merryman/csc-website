@@ -14,22 +14,12 @@ module CSCFiles
   CREDENTIAL_STORE_FILE = "#{$0}-oauth2.json"
   
   def self.website_folder
+    GoogleDrive.login_with_oauth(@token)
     self.session.collection_by_url('https://drive.google.com/a/ucsc.edu/#folders/0B8hzPqyoif6vazE3akV0aTVVXzA')
   end
   
-  def self.documents
-    @session.files.select { |file|
-      file.resource_type == 'document'
-    }
-  end
-  
-  def self.spreadsheets
-    @session.files.select { |file|
-       file.resource_type == 'spreadsheet'
-    }
-  end
-  
   def self.session
+    GoogleDrive.login_with_oauth(@token)
     @session
   end
   
@@ -48,7 +38,20 @@ module CSCFiles
                        'https://docs.google.com/feeds/'],
             key)
       client.authorization = service_account.authorize
-      GoogleDrive.login_with_oauth(client.authorization.access_token)
+      @token = client.authorization.access_token
+      GoogleDrive.login_with_oauth(@token)
+    end
+    
+    def self.documents
+      @session.files.select { |file|
+        file.resource_type == 'document'
+      }
+    end
+  
+    def self.spreadsheets
+      @session.files.select { |file|
+         file.resource_type == 'spreadsheet'
+      }
     end
     
     @session = self.setup
