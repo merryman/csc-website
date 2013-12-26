@@ -117,22 +117,22 @@ div.transparent {
 /* Fonts */
 @font-face {
 	font-family: 'Chrono Bold';
-	src: url('/assets/ChronoWebBold.woff') format("woff");
+	src: url('/assets/ChronoWebBold-ba46bd7cc42ed5101428cc45fc535375.woff') format("woff");
 }
 
 @font-face {
   font-family: "Chrono Regular";
-  src: url("/assets/ChronoWebRegular.woff") format("woff");
+  src: url("/assets/ChronoWebRegular-0b04dd726616b7d95d8379ad372e6804.woff") format("woff");
 }
 
 @font-face {
   font-family: "Chrono Medium";
-  src: url("/assets/ChronoWebMedium.woff") format("woff");
+  src: url("/assets/ChronoWebMedium-ec3a1f62a75dc60e1ec9ecec779e0ee3.woff") format("woff");
 }
 
 @font-face {
   font-family: "Chrono Light";
-  src: url("/assets/ChronoWebLight.woff") format("woff");
+  src: url("/assets/ChronoWebLight-9df02a79c529bb94f0f9980eea63018f.woff") format("woff");
 }
 /*!
  * Bootstrap v3.0.3
