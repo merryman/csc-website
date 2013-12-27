@@ -1,8 +1,11 @@
 require 'google_drive/csc_files'
 
 class ResourcesController < ApplicationController
+
+  before_filter :load_folder
   
-  def index
+  def load_folder
+    @resources_folder = CSCFiles.website_folder.subcollection_by_title('resources')
   end
   
   def blueprint

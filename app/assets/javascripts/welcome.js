@@ -109,7 +109,9 @@ function renderTimeline(){
 				.duration(100)
 				.attr("d", arc);
 		}
-		mouseover(todays_frame)
+		if(todays_frame){
+			mouseover(todays_frame)
+		}
 	};
 
 };

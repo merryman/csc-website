@@ -1,15 +1,20 @@
-<% VotingMemberGoogle.fetchAll.each do |member| %>
+
 <div class="members">
+<% VotingMemberGoogle.fetchAll.each do |member| %>
 	<div class="well">
-		<div class="profile-pic">
-			<%= image_tag member.picture_url, :class => 'circular'%>
-		</div>
-		<div id="name-box">
-			<%= member.first_name + ' ' + member.last_name%>
-		</div>
-		<div class="member-desctiption">
-			<%= member.description %>
+		<div class="wrapper">
+	    	<div class="profile-pic inner">
+				<%= image_tag member.picture_url, :class => 'circular'%>
+			</div>
+			<div class="inner">
+				<div class="name-box">
+						<%= member.first_name + ' ' + member.last_name%>
+				</div>
+				<div class="member-description" >
+					<%= member.description %>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 <% end %>
+</div>

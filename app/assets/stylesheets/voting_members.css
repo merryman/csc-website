@@ -3,13 +3,43 @@
   They will automatically be included in application.css.
 */
 
-#name-box {
+.wrapper {
+    display: table;
+    width: 100%;
+}
+.wrapper2 {
+    height: 100%;
+    display: table-row
+}
+.inner {
+    height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.crop {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
+}
+
+.name-box {
     font-weight: 700;
     font-size: large;
 }
 
+.member-description {
+	width: 478px;
+}
+
 .profile-pic {
-    float: left;
     padding: 10px;
     padding-right: 20px;
 }	

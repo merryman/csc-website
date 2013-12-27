@@ -13,13 +13,19 @@ module CSCFiles
   CACHED_API_FILE = "drive-#{API_VERSION}.cache"
   CREDENTIAL_STORE_FILE = "#{$0}-oauth2.json"
   
+  def self.check_refresh
+    if @client.authorization.expired?
+      @session = self.setup
+    end
+  end
+  
   def self.website_folder
-    GoogleDrive.login_with_oauth(@token)
+    self.check_refresh
     self.session.collection_by_url('https://drive.google.com/a/ucsc.edu/#folders/0B8hzPqyoif6vazE3akV0aTVVXzA')
   end
   
   def self.session
-    GoogleDrive.login_with_oauth(@token)
+    self.check_refresh
     @session
   end
   
@@ -38,17 +44,20 @@ module CSCFiles
                        'https://docs.google.com/feeds/'],
             key)
       client.authorization = service_account.authorize
+      @client = client
       @token = client.authorization.access_token
       GoogleDrive.login_with_oauth(@token)
     end
     
     def self.documents
+      self.check_refresh
       @session.files.select { |file|
         file.resource_type == 'document'
       }
     end
   
     def self.spreadsheets
+      self.check_refresh
       @session.files.select { |file|
          file.resource_type == 'spreadsheet'
       }

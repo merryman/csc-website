@@ -1,2 +1,9 @@
 <h1>Agendas</h1>
-<p>A list of all Agendas of the previous years (Google Drive Integration)</p>
+<p>A list of all Agendas of the current and previous years.</p>
+<% @agenda_files.each do |agendas| %>
+	<p>
+	<%= link_to	'', agendas.human_url, 
+		:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %>	
+	<span><%= agendas.title %> </span>  
+	<p/>
+<% end %>

@@ -1,2 +1,10 @@
 <h1>Minutes</h1>
-<p>Googel Drive Integration</p>
+<p>A list of all the minutes...</p>
+
+<% @minute_files.each do |minutes| %>
+	<p>
+	<%= link_to	'', minutes.human_url, 
+		:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %>	
+	<span><%= minutes.title %> </span>  
+	<p/>
+<% end %>

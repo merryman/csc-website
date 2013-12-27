@@ -8,13 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body class style="margin-bottom: 100px;">
-
+<div id="web-content">
 	<div id="menu-container">
 		<%= image_tag "redwood.jpg"%>
 		<div id="title">
 			Campus <p style="text-indent: 2em;"> Sustainability </p>   
 			<p style="text-indent: 4em;"> Council </p>
 		</div>
+		<div id="menu">
 		<nav class="navbar navbar-inverse transparent">
             <div class="container">
 				<style type="text/css" media="screen">
@@ -25,13 +26,16 @@
 				<%= render_navigation level: 1..2, expand_all: true %>
             </div>
 		</nav>
+		</div>
 	</div>
-
 <div id="content" class='clearfix'>
 <%= yield %>	
 </div>
 
 <div id="imp">
+	
+</div>
+
 	
 </div>
 
