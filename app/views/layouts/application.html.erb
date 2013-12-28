@@ -2,15 +2,34 @@
 <html>
 <head>
   <title>Csc</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script type="text/javascript" src="https://rawgithub.com/morr/jquery.appear/master/jquery.appear.js"></script>
   <%= csrf_meta_tags %>
+<script type="text/javascript">
+	$(function(){
+		$('#kenburns').kenburns({
+			images:['<%= asset_path('meadow.jpg') %>', '<%= asset_path 'redwood.jpg' %>', 
+			        '<%= asset_path 'seaview.jpg' %>', '<%= asset_path 'spring.jpg' %>', '<%= asset_path 'sunflower.jpg' %>'],
+			frames_per_second: 40,
+			display_time: 13000,
+			fade_time: 1000,
+			zoom: 1.2,
+			background_color:'#ffffff'
+		});				
+	});
+</script>
 </head>
 <body class style="margin-bottom: 100px;">
 <div id="web-content">
 	<div id="menu-container">
-		<%= image_tag "redwood.jpg"%>
+		<!-- <%= image_tag ['meadow.jpg', 'redwood.jpg', 'seaview.jpg', 'spring.jpg', 'sunflower.jpg'].sample %> -->  <div id="images">
+			<canvas id="kenburns" width="770" height="288">
+				<p>Your browser doesn't support canvas!</p>
+			</canvas>
+		</div>
 		<div id="title">
 			Campus <p style="text-indent: 2em;"> Sustainability </p>   
 			<p style="text-indent: 4em;"> Council </p>
@@ -34,6 +53,8 @@
 </div>
 
 <div id="imp">
+	
+	
 	
 </div>
 

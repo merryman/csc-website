@@ -1,20 +1,21 @@
+<div id="notification" class="alert alert-success">
+	<%= @notification.html_safe %>
+</div>
 <div id="left-box">
 	<h2>Mission Statement</h2>
 	<p>
 	The role of the Campus Sustainability Council (CSC) is to provide funding to registered UCSC student organizations for programs and events that create, implement, and monitor environmentally sound practices on campus as established through the protocol outlined in the Blueprint for a Sustainable Campus. These organizations additionally facilitate greater collaboration between students, the administration, staff, faculty, and the community.
 	</p>
 	<div id="info-panel" class='clearfix'>
-		<div id="updates" class='infobox'>
-			 <% StatusUpdateGoogle.fetchAll.each do |update| %>
-			  <div class='update-date'><%= update.date.to_date.to_s  %></div>
-			  <div class='update-content'><%= update.content %></div>
-			  <p>
-			<% end %>
+		<%= content_tag "div", id: "meeting-spot", data: {url: MeetingPointGoogle.get_meeting_spot } do %>
+		<% end %>
+		<div id="map-location" class='infobox'>
+
 		</div>
 		<div id="meetings" class='infobox'>
 	    Campus Sustainability Council Meetings have been set for Monday Nights from <p><br>
-		<b><%= "7:30-9:30pm" %></b><br>
-	    <i>located in</i> <br>
+		<b><%= "7:30-9:30pm" %></b><br><br>
+	    <i>located in</i> <br><br>
 	    <b><%= "College Eight, Room 301" %></b>
 		</div>
 	</div>	
@@ -25,6 +26,7 @@
 		<% end %>
 		<p id='timeline-title'>CSC Timeline</p>
 		<div id="date-frame">
+			26th Sep 2013 - 6th Jan 2014
 		</div>
 		<div id="donut"></div>
 		<div id="description">

@@ -1,9 +1,14 @@
+
+
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+
+marker_present = false
 
 $(window).load(function(){
 	if($('#timeline').length) {
 		renderTimeline();
+		renderMaps();
 	}
 });
 
@@ -114,4 +119,37 @@ function renderTimeline(){
 		}
 	};
 
+};
+
+function renderMaps() {
+	var point = $('div#meeting-spot').data('url')
+    var map_canvas = document.getElementById('map-location');
+    var map_options = {
+      center: new google.maps.LatLng(point.lat, point.lng),
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+    zoomControl: true
+    };
+
+    var map = new google.maps.Map(map_canvas, map_options);
+    $('div#map-location').appear();
+    $(document.body).on('appear', 'div#map-location', function() {
+  		 if(!marker_present)
+  		 {
+  			  marker = new google.maps.Marker({
+          				position: map.center,
+  						animation: google.maps.Animation.DROP,
+  						map: map
+      	  		  });
+			  function returnMapUrl(GLatLngObj){
+				       var point= GLatLngObj || map.getCenter();
+				       return "http://maps.google.com/?ll="+point.lat()+','+point.lng();
+				  } 
+			  google.maps.event.addListener(marker, 'click', function(overlay, l) {
+					      window.location = returnMapUrl(l);
+				    });
+			  marker_present = true;
+  	   	   }
+     });
 };

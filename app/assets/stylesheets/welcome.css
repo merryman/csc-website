@@ -20,6 +20,18 @@ div.infobox {
 	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 */}
 	
+#timeline {
+	height: 420px;
+}
+	
 #meetings {
 	text-align: center;
+}
+
+#map-location {
+	height: 210px;
+}
+
+#kenburns {
+	display: block;
 }

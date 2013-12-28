@@ -4,3 +4,4 @@ public/system/*
 client_secrets.json
 drive-v2.cache
 drive.log
+.DS_STORE
