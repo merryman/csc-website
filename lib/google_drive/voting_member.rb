@@ -12,15 +12,8 @@ class VotingMemberGoogle
   end
   
   def self.fetchAll
-    #if not @members
-      self.refresh
-      #end
-    @members 
-  end
-  
-  def self.refresh
     ws = CSCFiles.session.spreadsheet_by_title('voting-members').worksheets[0]
-    @members = ws.rows.map { |member|
+    ws.rows.map { |member|
       VotingMemberGoogle.new(*member)
     }
   end

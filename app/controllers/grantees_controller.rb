@@ -9,14 +9,21 @@ class GranteesController < ApplicationController
   end
   
   def proposal
-    rfp = @grantees_folder.subcollection_by_title('proposal').documents.first
-    if rfp
-      redirect_to rfp.human_url
+    rfp = @grantees_folder.subcollection_by_title('proposal')
+                          .documents
+                          .delete_if { |file| 
+                            file.title == 'README.txt' 
+                          }
+    if rfp.first
+      redirect_to rfp.first.human_url
     end 
   end
 
   def training
-    @training_ppts = @grantees_folder.subcollection_by_title('training').files
+    @training_ppts = @grantees_folder.subcollection_by_title('training')
+                                     .files.delete_if { |file| 
+                                       file.title == 'README.txt' 
+                                     }
   end
 
   def criteria
