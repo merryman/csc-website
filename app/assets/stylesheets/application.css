@@ -132,6 +132,22 @@ div.transparent {
 	opacity: 0.75;
 }
 
+.sexy_line { 
+    margin: 25px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, lightgrey));
+}
+
+#footer {
+	float: left;
+	font-size: 11px;
+	font-style: italic;
+	color: grey;
+	width: 650px;
+	padding-left: 45px;
+}
+
 /* Fonts */
 @font-face {
 	font-family: 'Chrono Bold';
