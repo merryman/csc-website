@@ -49,19 +49,5 @@ module CSCFiles
       GoogleDrive.login_with_oauth(@token)
     end
     
-    def self.documents
-      self.check_refresh
-      @session.files.select { |file|
-        file.resource_type == 'document'
-      }
-    end
-  
-    def self.spreadsheets
-      self.check_refresh
-      @session.files.select { |file|
-         file.resource_type == 'spreadsheet'
-      }
-    end
-    
     @session = self.setup
 end
