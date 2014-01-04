@@ -13,19 +13,19 @@ module CSCFiles
   CACHED_API_FILE = "drive-#{API_VERSION}.cache"
   CREDENTIAL_STORE_FILE = "#{$0}-oauth2.json"
   
-  def self.check_refresh
+  def self.refresh_session!
     if @client.authorization.expired?
       @session = self.setup
     end
   end
   
   def self.website_folder
-    self.check_refresh
-    self.session.collection_by_url('https://drive.google.com/a/ucsc.edu/#folders/0B8hzPqyoif6vazE3akV0aTVVXzA')
+    self.refresh_session!
+    @session.collection_by_url('https://drive.google.com/a/ucsc.edu/#folders/0B8hzPqyoif6vazE3akV0aTVVXzA')
   end
   
   def self.session
-    self.check_refresh
+    self.refresh_session!
     @session
   end
   
