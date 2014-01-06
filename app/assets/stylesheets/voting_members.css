@@ -33,6 +33,7 @@
 .name-box {
     font-weight: 700;
     font-size: large;
+	padding-bottom: 3px;
 }
 
 .member-description {
@@ -57,4 +58,13 @@
 
 .members {
 	padding-top: 20px;
+}
+
+#first-last-name {
+	display: inline-block;
+}
+
+#college {
+	display: inline-block;
+	color: grey;
 }

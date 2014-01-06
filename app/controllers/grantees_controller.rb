@@ -5,28 +5,23 @@ class GranteesController < ApplicationController
   before_filter :load_folder
   
   def load_folder
-    @grantees_folder = CSCFiles.website_folder.subcollection_by_title('grantees')
+    @proposal_folder = CSCFiles.get('grantees', 'proposal')
+    @training_folder = CSCFiles.get('grantees', 'training')
   end
   
   def proposal
-    rfp = @grantees_folder.subcollection_by_title('proposal')
-                          .documents
-                          .delete_if { |file| 
-                            file.title == 'README.txt' 
-                          }
-    if rfp.first
+    rfp = @proposal_folder.documents.first
+    if rfp
       redirect_to rfp.first.human_url
     end 
   end
 
   def training
-    @training_ppts = @grantees_folder.subcollection_by_title('training')
-                                     .files.delete_if { |file| 
-                                       file.title == 'README.txt' 
-                                     }
+    @training_ppts = @training_folder.files.delete_if { |file| file.title == 'README.txt' }
   end
 
   def criteria
     @criteria_doc = CSCFiles.session.file_by_title('csc-criteria')
   end
+  
 end

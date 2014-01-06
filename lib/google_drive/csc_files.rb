@@ -19,6 +19,18 @@ module CSCFiles
     end
   end
   
+  def self.get(*path)
+    self.refresh_session!
+    folder = @session.collection_by_url('https://drive.google.com/a/ucsc.edu/#folders/0B8hzPqyoif6vazE3akV0aTVVXzA')
+    path.each do |folder_name|
+      folder = folder.subcollection_by_title(folder_name)
+      if folder.nil?
+        raise '#{folder_name} does not exist!'
+      end
+    end
+    return folder
+  end
+  
   def self.website_folder
     self.refresh_session!
     @session.collection_by_url('https://drive.google.com/a/ucsc.edu/#folders/0B8hzPqyoif6vazE3akV0aTVVXzA')

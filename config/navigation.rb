@@ -63,7 +63,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    primary.item :members, 'Voting Members', url_for(:action => 'index', :controller => 'voting_members')
+    primary.item :members, 'Members', url_for(:action => 'index', :controller => 'voting_members')
     primary.item :transparency, 'Transparency', url_for(:action => 'constitution', :controller => 'transparency') do |sub_nav|
       sub_nav.item :agendas, 'Agendas', url_for(:action => 'agendas', :controller => 'transparency')
       sub_nav.item :minutes, 'Minutes', url_for(:action => 'minutes', :controller => 'transparency')

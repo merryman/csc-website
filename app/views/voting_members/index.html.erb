@@ -1,6 +1,27 @@
 
 <div class="members">
-<% VotingMemberGoogle.fetchAll.each do |member| %>
+<h3> Staff </h3>
+<% @staff_members.each do |member| %>
+<div class="well">
+	<div class="wrapper">
+    	<div class="profile-pic inner">
+			<%= image_tag member.picture_url, :class => 'circular'%>
+		</div>
+		<div class="inner">
+			<div class="name-box">
+				<div id="first-last-name">
+					<%= member.first_name + ' ' + member.last_name%>
+				</div>
+			</div>
+			<div class="member-description" >
+				<%= member.description %>
+			</div>
+		</div>
+	</div>
+</div>
+<%end%>
+<h3> Voting Members </h3>
+<% @voting_members.each do |member| %>
 	<div class="well">
 		<div class="wrapper">
 	    	<div class="profile-pic inner">
@@ -8,7 +29,36 @@
 			</div>
 			<div class="inner">
 				<div class="name-box">
+					<div id="first-last-name">
 						<%= member.first_name + ' ' + member.last_name%>
+					</div>
+					<div id="college">
+						<%= member.college_name %>
+					</div>
+				</div>
+				<div class="member-description" >
+					<%= member.description %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<h3> Community Members </h3>
+<% @community_members.each do |member| %>
+	<div class="well">
+		<div class="wrapper">
+	    	<div class="profile-pic inner">
+				<%= image_tag member.picture_url, :class => 'circular'%>
+			</div>
+			<div class="inner">
+				<div class="name-box">
+					<div id="first-last-name">
+						<%= member.first_name + ' ' + member.last_name%>
+					</div>
+					<div id="college">
+						<%= member.college_name %>
+					</div>
 				</div>
 				<div class="member-description" >
 					<%= member.description %>
