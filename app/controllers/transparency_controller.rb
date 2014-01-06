@@ -32,6 +32,7 @@ class TransparencyController < ApplicationController
   end
   
   def history
+    @history_files = self.extract_files(CSCFiles.get('transparency', 'historic-allocations'))
   end
   
 end

@@ -1,2 +1,9 @@
 <h1>History</h1>
-<p>List of all the previous allocations of the CSC. (Google Drive Integration)</p>
+<p>List of all the previous allocations of the CSC</p>
+<% @history_files.each do |historic_allocation| %>
+	<p>
+	<%= link_to	'', historic_allocation.human_url, 
+		:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %>	
+	<span><%= historic_allocation.title %> </span>  
+	<p/>
+<% end %>
