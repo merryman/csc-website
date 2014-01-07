@@ -22,7 +22,7 @@ class TimeFrameGoogle
   end
 
   def self.refresh
-    ws = CSCFiles.session.spreadsheet_by_title('csc-timeframes').worksheets[0]
+    ws = CSCFiles.get('about-us').file_by_title('csc-timeframes').worksheets[0]
     @timeframes = ws.rows.map { |tf|
       TimeFrameGoogle.new(*tf)
     }
