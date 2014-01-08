@@ -1,7 +1,10 @@
 require 'bootstrap_topbar_list'
+require 'google_drive/csc_files'
 # -*- coding: utf-8 -*-
 # Configures your navigation
 SimpleNavigation::Configuration.run do |navigation|
+  
+  @transparency_folders = CSCFiles.get('transparency').subcollections
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
@@ -65,11 +68,9 @@ SimpleNavigation::Configuration.run do |navigation|
     # thus you can use all the methods and vars you have available in the views.
     primary.item :members, 'Members', url_for(:action => 'index', :controller => 'voting_members')
     primary.item :transparency, 'Transparency', url_for(:action => 'constitution', :controller => 'transparency') do |sub_nav|
-      sub_nav.item :agendas, 'Agendas', url_for(:action => 'agendas', :controller => 'transparency')
-      sub_nav.item :minutes, 'Minutes', url_for(:action => 'minutes', :controller => 'transparency')
-      sub_nav.item :budgets, 'Budgets', url_for(:action => 'budgets', :controller => 'transparency')
-      sub_nav.item :constitution, 'Constitution', url_for(:action => 'constitution', :controller => 'transparency')
-      sub_nav.item :history, 'Historical Allocations', url_for(:action => 'history', :controller => 'transparency')
+      @transparency_folders.each do |folder|
+        sub_nav.item folder.title.to_sym, folder.title, url_for(:action => 'view_folder', :controller => 'transparency', :folder_name => folder.title)
+      end
     end
     
     primary.item :resources, 'Resources', url_for(:action => 'index', :controller => 'resources') do |sub_nav|

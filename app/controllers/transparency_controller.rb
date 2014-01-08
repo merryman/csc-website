@@ -2,37 +2,22 @@ require 'google_drive/csc_files'
 
 class TransparencyController < ApplicationController
   
-  before_filter :load_folder
-  
-  def load_folder
-    @transparency_folder = CSCFiles.website_folder.subcollection_by_title('transparency')
-  end
-  
-  def extract_files(folder)
-    folder.files.delete_if { |file| file.title == 'README.txt' }
-  end
-  
-  def agendas
-    @agenda_files = self.extract_files(CSCFiles.get('transparency', 'agendas'))                           
-  end
-
-  def minutes
-    @minute_files = self.extract_files(CSCFiles.get('transparency', 'minutes'))
-  end
-
-  def budgets
-    @budget_files = {}
-    @budget_files[:csc] = self.extract_files(CSCFiles.get('transparency', 'budgets', 'csc'))
-    @budget_files[:sec] = self.extract_files(CSCFiles.get('transparency', 'budgets', 'sec'))
-    @budget_files[:eslp] = self.extract_files(CSCFiles.get('transparency', 'budgets','eslp'))
+  def view_folder
+    folder = CSCFiles.get('transparency', params[:folder_name])
+    @folder_name = folder.title
+    
+    html = Nokogiri::HTML(folder.file_by_title('description').download_to_string.html_safe)
+    description_html = html.at('//span').parent.children
+    description_html.each do |node|
+      node.remove_attribute('class')
+    end
+    @folder_description = description_html.to_s
+    @folder_sections = folder.subcollections
+    @top_folder = folder.files.delete_if { |file| file.title == 'description' or file.resource_type == 'folder'}
   end
 
   def constitution
     redirect_to self.extract_files(CSCFiles.get('transparency', 'constitution')).first.human_url
-  end
-  
-  def history
-    @history_files = self.extract_files(CSCFiles.get('transparency', 'historic-allocations'))
   end
   
 end

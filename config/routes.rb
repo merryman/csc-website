@@ -5,11 +5,8 @@ Csc::Application.routes.draw do
   get "voting_members/index"
   resources :voting_members
 
-  get "transparency/agendas"
-  get "transparency/minutes"
-  get "transparency/budgets"
   get "transparency/constitution"
-  get "transparency/history"
+  get 'transparency/view_folder'
   get "grantees/proposal"
   get "grantees/criteria"
   get "grantees/training"

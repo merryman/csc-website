@@ -1,0 +1,21 @@
+<h1> <%= @folder_name %> </h1>
+<p> <%= @folder_description.html_safe %> </p>
+
+<% @top_folder.each do |file| %>
+	<p>
+	<%= link_to	'', file.human_url, 
+		:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %>	
+	<span><%= file.title %> </span>  
+	<p/>
+<% end %>
+
+<% @folder_sections.each do |section| %>
+	<h3> <%= section.title %> </h3>	
+	<% section.files.each do |file| %>
+		<p>
+		<%= link_to	'', file.human_url, 
+			:class => 'glyphicon glyphicon-cloud-download', :style => 'padding-right: 30px;' %>	
+		<span><%= file.title %> </span>  
+		<p/>
+	<% end %>
+<% end %>
